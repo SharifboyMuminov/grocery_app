@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/pages/auth/google_signIn_age.dart';
 import 'package:grocery_app/pages/on_boarding/widget/on_boarding_item.dart';
 import 'package:grocery_app/pages/widget/gradient_button.dart';
 
@@ -82,7 +83,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     text: 'Get started',
                     onPressed: () {
                       if (_activeOnboardingIndex == 3) {
-                        //TODO: push to auth
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return GoogleSignInPage();
+                            },
+                          ),
+                        );
                       } else {
                         _pageController.nextPage(
                           duration: const Duration(milliseconds: 300),
