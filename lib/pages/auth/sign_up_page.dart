@@ -1,20 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/extensions/context_extensions.dart';
-import 'package:grocery_app/pages/auth/sign_up_page.dart';
 import 'package:grocery_app/pages/auth/widget/auth_text_field.dart';
 import 'package:grocery_app/pages/widget/gradient_button.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   bool _obscureTextPassword = true;
-  bool _isActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +21,12 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Color(0xFFF4F5F9),
       body: Stack(
         children: [
-          Image.asset("assets/images/auth_login.png"),
+          Image.asset("assets/images/auth_create.png"),
           Align(
             alignment: .bottomCenter,
             child: Container(
               padding: .symmetric(horizontal: 16, vertical: 22),
-              height: context.height / 1.92,
+              height: context.height / 1.9,
               width: context.width,
               decoration: BoxDecoration(
                 color: Color(0xFFF4F5F9),
@@ -38,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: .start,
                 children: [
                   Text(
-                    "Welcome back !",
+                    "Create account",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: .w700,
@@ -46,17 +44,23 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   Text(
-                    "Sign in to your account",
+                    "Quickly create account",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: .w500,
                       color: Color(0xFF868889),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: 20),
                   AuthTextField(
                     prefixIcon: CupertinoIcons.mail,
                     hintText: 'Email Address',
+                  ),
+                  SizedBox(height: 5),
+                  AuthTextField(
+                    textInputType: .phone,
+                    prefixIcon: CupertinoIcons.phone,
+                    hintText: 'Phone number',
                   ),
                   SizedBox(height: 5),
                   AuthTextField(
@@ -70,54 +74,17 @@ class _LoginPageState extends State<LoginPage> {
                       });
                     },
                   ),
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Transform.scale(
-                        scale: .8,
-                        child: CupertinoSwitch(
-                          value: _isActive,
-                          activeTrackColor: Colors.lightGreen,
-                          onChanged: (value) {
-                            setState(() {
-                              _isActive = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Text(
-                        "Remember me",
-                        style: TextStyle(
-                          color: Color(0xFF868889),
-                          fontSize: 15,
-                          fontWeight: .w500,
-                        ),
-                      ),
-                      Spacer(),
-                      CupertinoButton(
-                        padding: .zero,
-                        child: Text(
-                          "Forgot password",
-                          style: TextStyle(
-                            color: Color(0xFF407EC7),
-                            fontWeight: .w500,
-                            fontSize: 15,
-                          ),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
+
                   Spacer(),
 
-                  GradientButton(text: "Login", onPressed: () {}),
+                  GradientButton(text: "Signup", onPressed: () {}),
                   SizedBox(height: 20),
 
                   Row(
                     mainAxisAlignment: .center,
                     children: [
                       Text(
-                        "Don’t have an account ? ",
+                        "Already have an account ? ",
                         style: TextStyle(
                           color: Color(0xFF868889),
                           fontWeight: .w400,
@@ -127,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                       CupertinoButton(
                         padding: .zero,
                         child: Text(
-                          "Sign up",
+                          "Login",
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: .w600,
@@ -135,14 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return SignUpPage();
-                              },
-                            ),
-                          );
+                          Navigator.pop(context);
                         },
                       ),
                     ],
