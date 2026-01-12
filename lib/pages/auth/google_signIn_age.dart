@@ -44,7 +44,7 @@ class _GoogleSignInPageState extends State<GoogleSignInPage> {
                   Text(
                     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: .w500,
                       color: Color(0xFF868889),
                     ),
