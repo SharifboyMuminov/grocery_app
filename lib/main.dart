@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/pages/auth/login_page.dart';
-import 'package:grocery_app/pages/auth/sign_up_page.dart';
+import 'package:grocery_app/pages/home/home_page.dart';
 import 'package:grocery_app/pages/on_boarding/on_boarding_page.dart';
 
 void main() {
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFF9F9F9)),
-      home: const OnBoardingPage(),
-      // home: const SignUpPage(),
+      // home: const OnBoardingPage(),
+      home: const HomePage(),
     );
   }
 }

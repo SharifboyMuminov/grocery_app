@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/extensions/context_extensions.dart';
 import 'package:grocery_app/pages/auth/sign_up_page.dart';
 import 'package:grocery_app/pages/auth/widget/auth_text_field.dart';
+import 'package:grocery_app/pages/home/home_page.dart';
 import 'package:grocery_app/pages/widget/gradient_button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -110,7 +111,20 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Spacer(),
 
-                  GradientButton(text: "Login", onPressed: () {}),
+                  GradientButton(
+                    text: "Login",
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                        (_) => false,
+                      );
+                    },
+                  ),
                   SizedBox(height: 20),
 
                   Row(

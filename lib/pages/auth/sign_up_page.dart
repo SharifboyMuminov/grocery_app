@@ -26,7 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
             alignment: .bottomCenter,
             child: Container(
               padding: .symmetric(horizontal: 16, vertical: 22),
-              height: context.height / 1.9,
+              height: context.height / 1.85,
               width: context.width,
               decoration: BoxDecoration(
                 color: Color(0xFFF4F5F9),
@@ -78,7 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Spacer(),
 
                   GradientButton(text: "Signup", onPressed: () {}),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
 
                   Row(
                     mainAxisAlignment: .center,

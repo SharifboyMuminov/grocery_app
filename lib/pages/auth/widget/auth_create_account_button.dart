@@ -3,7 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grocery_app/extensions/context_extensions.dart';
 
 class AuthCreateAccountButton extends StatelessWidget {
-  const AuthCreateAccountButton({super.key});
+  const AuthCreateAccountButton({super.key, this.onTab});
+
+  final VoidCallback? onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class AuthCreateAccountButton extends StatelessWidget {
         ],
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: onTab,
         style: TextButton.styleFrom(
           backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

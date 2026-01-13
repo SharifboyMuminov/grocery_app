@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/extensions/context_extensions.dart';
 import 'package:grocery_app/pages/auth/login_page.dart';
+import 'package:grocery_app/pages/auth/sign_up_page.dart';
 import 'package:grocery_app/pages/auth/widget/auth_create_account_button.dart';
 import 'package:grocery_app/pages/auth/widget/auth_google_button.dart';
 
@@ -54,7 +55,18 @@ class _GoogleSignInPageState extends State<GoogleSignInPage> {
                   AuthGoogleButton(),
                   SizedBox(height: 12),
 
-                  AuthCreateAccountButton(),
+                  AuthCreateAccountButton(
+                    onTab: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SignUpPage();
+                          },
+                        ),
+                      );
+                    },
+                  ),
                   SizedBox(height: 20),
 
                   Row(
