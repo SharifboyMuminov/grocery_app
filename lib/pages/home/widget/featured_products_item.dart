@@ -160,7 +160,10 @@ class _FeaturedProductsItemState extends State<FeaturedProductsItem> {
               if (widget.data["top_title"] != null)
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-                  decoration: BoxDecoration(color: Color(0xFFFDEFD5)),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFDEFD5),
+                    borderRadius: BorderRadius.only(topLeft: .circular(2)),
+                  ),
                   child: Text(
                     widget.data["top_title"],
                     style: TextStyle(
@@ -173,7 +176,10 @@ class _FeaturedProductsItemState extends State<FeaturedProductsItem> {
               else if (widget.data["discount_price"] != null)
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-                  decoration: BoxDecoration(color: Color(0xFFFEE4E4)),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFEE4E4),
+                    borderRadius: BorderRadius.only(topLeft: .circular(2)),
+                  ),
                   child: Text(
                     widget.data["discount_price"],
                     style: TextStyle(

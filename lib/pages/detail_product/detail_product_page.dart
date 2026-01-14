@@ -178,7 +178,7 @@ Enjoy the natural taste and health benefits of Organic Mountain lemons in every 
                       height: 1.18,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 12),
                   Container(
                     padding: EdgeInsets.only(left: 17),
                     height: 50,

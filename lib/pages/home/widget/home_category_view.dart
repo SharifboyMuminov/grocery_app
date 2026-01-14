@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grocery_app/pages/categories/categories_page.dart';
 
 class HomeCategoryView extends StatefulWidget {
   const HomeCategoryView({super.key});
@@ -37,29 +38,14 @@ class _HomeCategoryViewState extends State<HomeCategoryView> {
       "color": Color(0xFFDCF4F5),
     },
     {
-      "title": "Vegetables",
-      "icon": "assets/icons/vegetables.svg",
-      "color": Color(0xFFE6F2EA),
+      "title": "Household",
+      "icon": "assets/icons/household.svg",
+      "color": Color(0xFFFFE8F2),
     },
     {
-      "title": "Fruits",
-      "icon": "assets/icons/fruits.svg",
-      "color": Color(0xFFFFE9E5),
-    },
-    {
-      "title": "Beverages",
-      "icon": "assets/icons/beverages.svg",
-      "color": Color(0xFFFFF6E3),
-    },
-    {
-      "title": "Grocery",
-      "icon": "assets/icons/grocery.svg",
-      "color": Color(0xFFF3EFFA),
-    },
-    {
-      "title": "Edible oil",
-      "icon": "assets/icons/edible_oil.svg",
-      "color": Color(0xFFDCF4F5),
+      "title": "Babycare",
+      "icon": "assets/icons/babycare.svg",
+      "color": Color(0xFFD2EFFF),
     },
   ];
 
@@ -84,7 +70,16 @@ class _HomeCategoryViewState extends State<HomeCategoryView> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return CategoriesPage();
+                          },
+                        ),
+                      );
+                    },
                     icon: Icon(
                       Icons.arrow_forward_ios,
                       color: Color(0xFF868889),

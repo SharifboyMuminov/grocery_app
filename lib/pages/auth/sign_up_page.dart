@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/extensions/context_extensions.dart';
 import 'package:grocery_app/pages/auth/widget/auth_text_field.dart';
+import 'package:grocery_app/pages/home/home_page.dart';
 import 'package:grocery_app/pages/widget/gradient_button.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -77,7 +78,20 @@ class _SignUpPageState extends State<SignUpPage> {
 
                   Spacer(),
 
-                  GradientButton(text: "Signup", onPressed: () {}),
+                  GradientButton(
+                    text: "Signup",
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HomePage();
+                          },
+                        ),
+                        (_) => false,
+                      );
+                    },
+                  ),
                   SizedBox(height: 15),
 
                   Row(
