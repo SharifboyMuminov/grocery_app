@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/pages/about_me/about_me_page.dart';
 import 'package:grocery_app/pages/profile/widget/profile_item.dart';
 import 'package:grocery_app/pages/profile/widget/user_data_view.dart';
 
@@ -22,7 +23,16 @@ class _ProfilePageState extends State<ProfilePage> {
             ProfileItem(
               title: "About me",
               iconsPath: "assets/icons/profile.svg",
-              onTab: () {},
+              onTab: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return AboutMePage();
+                    },
+                  ),
+                );
+              },
             ),
             ProfileItem(
               title: "My Orders",

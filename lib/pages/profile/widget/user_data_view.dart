@@ -15,7 +15,7 @@ class UserDataView extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(bottom: 50),
               width: context.width,
-              height: 150,
+              height: 180,
               color: Colors.white,
             ),
             Positioned(
